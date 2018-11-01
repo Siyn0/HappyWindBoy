@@ -2,7 +2,6 @@ import pygame
 from pygame.locals import *
 from sys import exit
 from random import randint
-import time
 
 
 #子弹类
@@ -76,7 +75,7 @@ ticks = 0
 
 #帧率和帧数
 FRAME_RATE = 60
-ANTMATE_CYCLE = 30
+ANIMATE_CYCLE = 60
 
 clock = pygame.time.Clock()
 offset = {pygame.K_LEFT:0,pygame.K_RIGHT:0,pygame.K_UP:0,pygame.K_DOWN:0}
@@ -87,8 +86,9 @@ bullet1_surface = pygame.image.load('images/wind.png')
 #enemy1图片
 enemy1_surface = pygame.image.load('images/xiaobing.png')
 
+
 #+14!图片
-enemy1_down_surface = pygame.image.load('images/+14.jpg')
+enemy1_down_surface = pygame.image.load('images/+14.png')
 
 #初始化
 pygame.init()
@@ -154,10 +154,10 @@ while True:
     enemy1_down_group.add(pygame.sprite.groupcollide(enemy1_group,yasoo.bullets1,True,False))
 
     #+14!-------------------显眼的分割线！！！
-    #这里有bug
     for enemy1_down in enemy1_down_group:
-        screen.blit(enemy1_down_surface, enemy1_down.rect)
-        enemy1_down_group.remove(enemy1_down)
+         screen.blit(enemy1_down_surface,enemy1_down.rect)
+         if ticks % (ANIMATE_CYCLE//2) == 0:
+             enemy1_down_group.remove(enemy1_down)
         
     #更新屏幕
     pygame.display.update()
