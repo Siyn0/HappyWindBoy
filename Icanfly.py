@@ -4,13 +4,13 @@ from sys import exit
 from random import randint
 
 
-#子弹类
-class Bullet(pygame.sprite.Sprite):
-    def __init__(self,bullet_surface,bullet_init_pos):
+#ＱＱＱHasakil！吹风类
+class Wind(pygame.sprite.Sprite):
+    def __init__(self,wind_surface,wind_init_pos):
         pygame.sprite.Sprite.__init__(self)
-        self.image = bullet_surface
+        self.image = wind_surface
         self.rect = self.image.get_rect()
-        self.rect.topleft = bullet_init_pos
+        self.rect.topleft = wind_init_pos
         self.speed = 8
     #移动
     def update(self):
@@ -18,7 +18,7 @@ class Bullet(pygame.sprite.Sprite):
         if self.rect.right < -self.rect.width:
             self.kill()
 
-#敌人类
+#小兵类
 class Enemy(pygame.sprite.Sprite):
     def __init__(self,enemy_surface,enemy_init_pos):
         pygame.sprite.Sprite.__init__(self)
@@ -31,7 +31,7 @@ class Enemy(pygame.sprite.Sprite):
         self.rect.right -= self.speed
         if self.rect.right < 0:
             self.kill()
-#组
+#小兵组
 enemy1_group = pygame.sprite.Group()
 
 #玩家类
@@ -43,12 +43,12 @@ class Yasoo(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.topleft = yasoo_init_pos
         self.speed = 6
-        #子弹1的group(抄过来是风啦)
-        self.bullets1 = pygame.sprite.Group()
+        #风组
+        self.winds1 = pygame.sprite.Group()
 
-    def single_shoot(self,bullet1_surface):
-        bullet1 = Bullet(bullet1_surface,self.rect.midtop)
-        self.bullets1.add(bullet1)
+    def single_shoot(self,wind1_surface):
+        wind1 = Wind(wind1_surface,self.rect.midtop)
+        self.winds1.add(wind1)
 
     def move(self,offset):
         x = self.rect.left + offset[pygame.K_RIGHT] - offset[pygame.K_LEFT]
@@ -67,6 +67,21 @@ class Yasoo(pygame.sprite.Sprite):
         else:
             self.rect.top = y
 
+#面对疾风吧！
+class WindWall(pygame.sprite.Sprite):
+
+    def __init__(self,windwall_surface,windwall_init_pos):
+        pygame.sprite.Sprite.__init__(self)
+        self.image = windwall_surface
+        self.rect = self.image.get_rect()
+        self.rect.topleft = windwall_init_pos
+        self.speed = 1
+        
+    def update(self):
+        self.rect.right += self.speed
+        if ticks % (ANIMATE_CYCLE//4) == 0:
+            self.kill()
+
 SCREEN_WIDTH = 1200
 SCREEN_HEIGHT = 634
 
@@ -80,8 +95,8 @@ ANIMATE_CYCLE = 60
 clock = pygame.time.Clock()
 offset = {pygame.K_LEFT:0,pygame.K_RIGHT:0,pygame.K_UP:0,pygame.K_DOWN:0}
 
-#bullet1图片
-bullet1_surface = pygame.image.load('images/wind.png')
+#wind1图片
+wind1_surface = pygame.image.load('images/wind.png')
 
 #enemy1图片
 enemy1_surface = pygame.image.load('images/xiaobing.png')
@@ -127,17 +142,20 @@ while True:
 
         #控制方向
         if event.type == pygame.KEYDOWN:
-             if event.key in offset:
-                 offset[event.key] = yasoo.speed
-             if event.key == pygame.K_q:
-                 yasoo.single_shoot(bullet1_surface)
+            if event.key in offset:
+                offset[event.key] = yasoo.speed
+            if event.key == pygame.K_q:
+                yasoo.single_shoot(wind1_surface)
+#没写完的风墙在这里-----------------显眼的注释-------------------
+#            if event.key == pygame.K_w:
+#                windwall.
         elif event.type == pygame.KEYUP:
-             if event.key in offset:
-                 offset[event.key] = 0
+            if event.key in offset:
+                offset[event.key] = 0
     #疾风剑道
-    yasoo.bullets1.update()
+    yasoo.winds1.update()
     #画Hasakil
-    yasoo.bullets1.draw(screen)
+    yasoo.winds1.draw(screen)
 
     #计数
     ticks += 1
@@ -151,9 +169,9 @@ while True:
     enemy1_group.draw(screen)
 
     #碰撞检测
-    enemy1_down_group.add(pygame.sprite.groupcollide(enemy1_group,yasoo.bullets1,True,False))
+    enemy1_down_group.add(pygame.sprite.groupcollide(enemy1_group,yasoo.winds1,True,False))
 
-    #+14!-------------------显眼的分割线！！！
+    #+14!
     for enemy1_down in enemy1_down_group:
          screen.blit(enemy1_down_surface,enemy1_down.rect)
          if ticks % (ANIMATE_CYCLE//2) == 0:
