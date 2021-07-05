@@ -11,38 +11,38 @@ import javax.swing.JTextField;
 
 public class InputTextFrame
 {
-	//¶¨Òå¸ÃÍ¼ĞÎÖĞËùĞèµÄ×é¼şµÄÒıÓÃ
+	//å®šä¹‰è¯¥å›¾å½¢ä¸­æ‰€éœ€çš„ç»„ä»¶çš„å¼•ç”¨
 	private JFrame f;
 	private JButton bt;
 	private JTextField tf;
 
-	//·½·¨
-	InputTextFrame()//¹¹Ôì·½·¨
+	//æ–¹æ³•
+	InputTextFrame()//æ„é€ æ–¹æ³•
 	{
 		madeFrame();
 	}
 
 	public void madeFrame()
 	{
-		f = new JFrame("¿ØÖÆÌ¨");
+		f = new JFrame("æ§åˆ¶å°");
 
-		//¶ÔFrame½øĞĞ»ù±¾ÉèÖÃ¡£
-		f.setBounds(300,500,400,200);//¶Ô¿ò¼ÜµÄÎ»ÖÃºÍ´óĞ¡½øĞĞÉèÖÃ
+		//å¯¹Frameè¿›è¡ŒåŸºæœ¬è®¾ç½®ã€‚
+		f.setBounds(300,500,400,200);//å¯¹æ¡†æ¶çš„ä½ç½®å’Œå¤§å°è¿›è¡Œè®¾ç½®
 		f.setLayout(new GridLayout(2,2));
 
 
 
 		tf = new JTextField();
 		f.add(tf);
-		bt = new JButton("·¢ËÍ");
+		bt = new JButton("å‘é€");
 
-		//½«×é¼şÌí¼Óµ½FrameÖĞ
+		//å°†ç»„ä»¶æ·»åŠ åˆ°Frameä¸­
 		f.add(bt);
 
-		//¼ÓÔØÒ»ÏÂ´°ÌåÉÏµÄÊÂ¼ş
+		//åŠ è½½ä¸€ä¸‹çª—ä½“ä¸Šçš„äº‹ä»¶
 		tfEvent();
 
-		//ÏÔÊ¾´°Ìå
+		//æ˜¾ç¤ºçª—ä½“
 		f.setVisible(true);
 	}
 
@@ -54,19 +54,19 @@ public class InputTextFrame
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-				if(tf.getText().equals("ÄãÊÇÃÈÃÈ"))
+				if(tf.getText().equals("ä½ æ˜¯èŒèŒ"))
 				{
-					tf.setText("ÄãµÄ¶ÔÊÖ¿´µ½¡°ÄãÊÇÃÈÃÈ¡±£¬ÒÔÎª×Ô¼ºÊäÁË£¬ÓÚÊÇÄã»ñµÃÁËÊ¤Àû£¡");
-				}else if(tf.getText().equals("ÄãµÄ¶ÔÊÖ¿´µ½¡°ÄãÊÇÃÈÃÈ¡±£¬ÒÔÎª×Ô¼ºÊäÁË£¬ÓÚÊÇÄã»ñµÃÁËÊ¤Àû£¡"))
+					tf.setText("ä½ çš„å¯¹æ‰‹çœ‹åˆ°â€œä½ æ˜¯èŒèŒâ€ï¼Œä»¥ä¸ºè‡ªå·±è¾“äº†ï¼Œäºæ˜¯ä½ è·å¾—äº†èƒœåˆ©ï¼");
+				}else if(tf.getText().equals("ä½ çš„å¯¹æ‰‹çœ‹åˆ°â€œä½ æ˜¯èŒèŒâ€ï¼Œä»¥ä¸ºè‡ªå·±è¾“äº†ï¼Œäºæ˜¯ä½ è·å¾—äº†èƒœåˆ©ï¼"))
 				{
-					tf.setText("¸ĞĞ»ÓÎÍæ¡£Èí¼ş¹¤³Ì18-2  ÖÜ¾²ç÷ ÖÆ×÷");
-				}else if(tf.getText().equals("¸ĞĞ»ÓÎÍæ¡£Èí¼ş¹¤³Ì18-2  ÖÜ¾²ç÷ ÖÆ×÷"))
+					tf.setText("æ„Ÿè°¢æ¸¸ç©ã€‚è½¯ä»¶å·¥ç¨‹18-2  xxx åˆ¶ä½œ");
+				}else if(tf.getText().equals("æ„Ÿè°¢æ¸¸ç©ã€‚è½¯ä»¶å·¥ç¨‹18-2  xxx åˆ¶ä½œ"))
 				{
 					f.setVisible(false);
 				}
 				else 
 					{
-					tf.setText("¶ÔÊÖºÁÎŞ·´Ó¦");
+					tf.setText("å¯¹æ‰‹æ¯«æ— ååº”");
 					}
 			}
 		});
