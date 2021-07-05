@@ -18,8 +18,9 @@
    
 # 四.实现方法  
 ## 4.1开始界面  
-   首先在Game.java中设置游戏主界面的各参数（窗口属性、画布长宽）：  
-'''  
+首先在Game.java中设置游戏主界面的各参数（窗口属性、画布长宽）:  
+  
+'''
 package main;  
 import javax.swing.JFrame;  
   
@@ -37,10 +38,11 @@ public class Game {
 		
 	}
 }
-'''  
-
+'''
+  
 在GamePanel类中，写出初始化游戏的方法：   
-'''  
+  
+'''
 public void initGame() {
 		isStart = false;
 		isFaild = false;
@@ -48,20 +50,24 @@ public void initGame() {
 		player_x = 200;
 		player_y = 200;
 	}
-'''  
+'''
+  
 使用三个布尔值表示游戏进行状态（isEnd实际未使用，计划为之后写游戏后续关卡准备）。  
 player_x和player_y记录了玩家坐标，初始位置为(200,200)。  
 当玩家启动游戏时，调用初始化方法：  
-'''  
+  
+'''
 	public GamePanel() {
 		this.setFocusable(true);
 		initGame();
 		this.addKeyListener(this);
 		timer.start();
 	}
-'''    
+'''
+  
 之后在paint(Graphics g)方法中，进行开始界面的绘制：  
-'''  
+  
+'''
 if(!isStart) {
 
 			g.drawImage(start.getImage(), 0, 0, 1920, 1080,  null);
@@ -71,7 +77,8 @@ if(!isStart) {
 			g.drawString("按下空格键",960,800);
 			g.drawString("上下左右控制移动",1000,600);
 		}
- '''    
+ '''
+   
 在这里，使用isStart布尔值变量检测游戏是否正在进行。  
 （如果直接在开始前绘制开始画面，游戏进行中按下暂停，需要重新调用一遍绘制开始画面的方法，这里选择在paint()里绘制开始界面）  
   
@@ -85,7 +92,8 @@ if(!isStart) {
  
 图3 向上移动  
 玩家移动到屏幕边缘（实际为Graphics画布边缘）时，会自动弹开20像素，防止玩家跑出边界。这段带有边界检测的控制移动代码如下：  
-'''  
+  
+'''
        if(direction == 1) {//右
 				if(player_x <= 1920 )
 					player_x += 10;
@@ -107,7 +115,8 @@ if(!isStart) {
 				else 
 					player_y -= 20;
  
-'''  
+'''
+  
 图4 向左移动  
 为了操作更加真实，向不同方向移动时，猫会面向移动方向，如上图。  
 原理为简单的处理图片（水平翻转）。  
@@ -126,6 +135,7 @@ if(!isStart) {
 图8 随便输入什么  
 在控制台中，上半部分为文本输入框，可以输入任意字符串。  
 控制台界面的实现在InputTextFrame类中，方法和主界面相似，这里展示事件响应部分：  
+  
 '''
 private void tfEvent()
 	{
@@ -152,7 +162,8 @@ private void tfEvent()
 			}
 		});
 	}
-  '''
+'''
+  
 示例：  
 输入“1234”，按下发送按钮，检测为输入字符串不是谜题答案，显示为：  
  
