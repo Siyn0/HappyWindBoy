@@ -1,0 +1,27 @@
+c:\users\u3008\documents\visual studio 2013\Projects\RapUndergroundKing\RapUndergroundKing\bin\Debug\RapUndergroundKing.exe.config
+C:\Users\u3008\documents\visual studio 2013\Projects\RapUndergroundKing\RapUndergroundKing\bin\Debug\RapUndergroundKing.exe
+C:\Users\u3008\documents\visual studio 2013\Projects\RapUndergroundKing\RapUndergroundKing\bin\Debug\RapUndergroundKing.pdb
+C:\Users\u3008\documents\visual studio 2013\Projects\RapUndergroundKing\RapUndergroundKing\obj\Debug\RapUndergroundKing.csprojResolveAssemblyReference.cache
+C:\Users\u3008\documents\visual studio 2013\Projects\RapUndergroundKing\RapUndergroundKing\obj\Debug\RapUndergroundKing.MainForm.resources
+C:\Users\u3008\documents\visual studio 2013\Projects\RapUndergroundKing\RapUndergroundKing\obj\Debug\RapUndergroundKing.Properties.Resources.resources
+C:\Users\u3008\documents\visual studio 2013\Projects\RapUndergroundKing\RapUndergroundKing\obj\Debug\RapUndergroundKing.csproj.GenerateResource.Cache
+C:\Users\u3008\documents\visual studio 2013\Projects\RapUndergroundKing\RapUndergroundKing\obj\Debug\RapUndergroundKing.exe
+C:\Users\u3008\documents\visual studio 2013\Projects\RapUndergroundKing\RapUndergroundKing\obj\Debug\RapUndergroundKing.pdb
+\\tsclient\D\大二\C#\抽象圣经（记事本程序）\RapUndergroundKing\bin\Debug\RapUndergroundKing.exe.config
+\\tsclient\D\大二\C#\抽象圣经（记事本程序）\RapUndergroundKing\obj\Debug\RapUndergroundKing.exe
+\\tsclient\D\大二\C#\抽象圣经（记事本程序）\RapUndergroundKing\obj\Debug\RapUndergroundKing.pdb
+\\tsclient\D\大二\C#\抽象圣经（记事本程序）\RapUndergroundKing\bin\Debug\RapUndergroundKing.exe
+\\tsclient\D\大二\C#\抽象圣经（记事本程序）\RapUndergroundKing\bin\Debug\RapUndergroundKing.pdb
+\\tsclient\D\大二\C#\抽象圣经（记事本程序）\RapUndergroundKing\obj\Debug\RapUndergroundKing.csprojResolveAssemblyReference.cache
+\\tsclient\D\大二\C#\抽象圣经（记事本程序）\RapUndergroundKing\obj\Debug\RapUndergroundKing.MainForm.resources
+\\tsclient\D\大二\C#\抽象圣经（记事本程序）\RapUndergroundKing\obj\Debug\RapUndergroundKing.Properties.Resources.resources
+\\tsclient\D\大二\C#\抽象圣经（记事本程序）\RapUndergroundKing\obj\Debug\RapUndergroundKing.csproj.GenerateResource.Cache
+D:\ILoveCode\learnC#\抽象圣经（记事本程序）\RapUndergroundKing\bin\Debug\RapUndergroundKing.exe.config
+D:\ILoveCode\learnC#\抽象圣经（记事本程序）\RapUndergroundKing\bin\Debug\RapUndergroundKing.exe
+D:\ILoveCode\learnC#\抽象圣经（记事本程序）\RapUndergroundKing\bin\Debug\RapUndergroundKing.pdb
+D:\ILoveCode\learnC#\抽象圣经（记事本程序）\RapUndergroundKing\obj\Debug\RapUndergroundKing.csprojAssemblyReference.cache
+D:\ILoveCode\learnC#\抽象圣经（记事本程序）\RapUndergroundKing\obj\Debug\RapUndergroundKing.MainForm.resources
+D:\ILoveCode\learnC#\抽象圣经（记事本程序）\RapUndergroundKing\obj\Debug\RapUndergroundKing.Properties.Resources.resources
+D:\ILoveCode\learnC#\抽象圣经（记事本程序）\RapUndergroundKing\obj\Debug\RapUndergroundKing.csproj.GenerateResource.cache
+D:\ILoveCode\learnC#\抽象圣经（记事本程序）\RapUndergroundKing\obj\Debug\RapUndergroundKing.exe
+D:\ILoveCode\learnC#\抽象圣经（记事本程序）\RapUndergroundKing\obj\Debug\RapUndergroundKing.pdb

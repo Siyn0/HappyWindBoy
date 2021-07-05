@@ -1,0 +1,53 @@
+import pygame
+from pygame.locals import *
+from sys import exit
+from random import randint
+
+SCREEN_WIDTH = 1920
+SCREEN_HEIGHT = 1080
+
+# Player类 -- 继承自pygame.sprite.Sprite
+class Player(pygame.sprite.Sprite):
+    def __init__(self, initial_position):
+        pygame.sprite.Sprite.__init__(self)     
+        self.image = pygame.image.load('xin.png')   #图片要自己在网上找
+        self.rect = self.image.get_rect()       
+        self.rect.topleft = initial_position    
+
+        self.speed = randint(-10,10)    #随机一个向左（即为负数时）或向右（正数）的速度
+    
+    def update(self):
+        self.rect.left += self.speed
+        if self.rect.left > SCREEN_WIDTH:            
+            self.kill()
+        elif self.rect.left<0:
+            self.kill()     #如果飞出边界就删除这个心形
+
+pygame.init()
+clock = pygame.time.Clock()
+screen = pygame.display.set_mode([SCREEN_WIDTH,SCREEN_HEIGHT],FULLSCREEN)
+
+# 建立精灵组
+group = pygame.sprite.Group()
+
+while True:
+    clock.tick(10)
+    print(len(group.sprites()))
+    
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            pygame.quit()
+            exit()
+
+    # 绘制背景
+    screen.fill((255,255,255))
+
+    # 不断往精灵组中添加精灵
+    group.add(Player((randint(0, SCREEN_WIDTH), randint(0, SCREEN_HEIGHT))))
+    
+    # 将每个精灵更新后显示在Screen上
+    group.update()
+    group.draw(screen)
+    
+    pygame.display.update()
+
